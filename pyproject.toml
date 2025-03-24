@@ -1,0 +1,24 @@
+[project]
+name = "torchsqlite"
+version = "0.1.0"
+description = "Sqlite based dataset for torch."
+authors = [
+    {name = "Taeyong Jeon", email = "taeyongjeon24@gmail.com"},
+]
+dependencies = ["torch>=2.6.0", "pandas>=2.2.3"]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
