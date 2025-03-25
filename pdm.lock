@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:02ddbfc2cf5176b4a53a4acfc1240175282b219b8cfe2bc56a8a2a2ba62c66af"
+content_hash = "sha256:c2d1542a73d8c1b026acd51460d92df7893b26a57c0d95d6ea9d1f432ee805cc"
 
 [[metadata.targets]]
 requires_python = ">=3.10"
@@ -262,8 +262,7 @@ name = "numpy"
 version = "2.2.4"
 requires_python = ">=3.10"
 summary = "Fundamental package for array computing in Python"
-groups = ["default"]
-marker = "python_version <= \"3.11\" or python_version >= \"3.12\""
+groups = ["default", "dev"]
 files = [
     {file = "numpy-2.2.4-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:8146f3550d627252269ac42ae660281d673eb6f8b32f113538e0cc2a9aed42b9"},
     {file = "numpy-2.2.4-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:e642d86b8f956098b564a45e6f6ce68a22c2c97a04f5acd3f221f57b8cb850ae"},
@@ -565,6 +564,21 @@ files = [
 ]
 
 [[package]]
+name = "pandas-stubs"
+version = "2.2.3.250308"
+requires_python = ">=3.10"
+summary = "Type annotations for pandas"
+groups = ["dev"]
+dependencies = [
+    "numpy>=1.23.5",
+    "types-pytz>=2022.1.1",
+]
+files = [
+    {file = "pandas_stubs-2.2.3.250308-py3-none-any.whl", hash = "sha256:a377edff3b61f8b268c82499fdbe7c00fdeed13235b8b71d6a1dc347aeddc74d"},
+    {file = "pandas_stubs-2.2.3.250308.tar.gz", hash = "sha256:3a6e9daf161f00b85c83772ed3d5cff9522028f07a94817472c07b91f46710fd"},
+]
+
+[[package]]
 name = "platformdirs"
 version = "4.3.7"
 requires_python = ">=3.9"
@@ -859,6 +873,17 @@ files = [
     {file = "triton-3.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8009a1fb093ee8546495e96731336a33fb8856a38e45bb4ab6affd6dbc3ba220"},
     {file = "triton-3.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8d9b215efc1c26fa7eefb9a157915c92d52e000d2bf83e5f69704047e63f125c"},
     {file = "triton-3.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e5dfa23ba84541d7c0a531dfce76d8bcd19159d50a4a8b14ad01e91734a5c1b0"},
+]
+
+[[package]]
+name = "types-pytz"
+version = "2025.1.0.20250318"
+requires_python = ">=3.9"
+summary = "Typing stubs for pytz"
+groups = ["dev"]
+files = [
+    {file = "types_pytz-2025.1.0.20250318-py3-none-any.whl", hash = "sha256:04dba4907c5415777083f9548693c6d9f80ec53adcaff55a38526a3f8ddcae04"},
+    {file = "types_pytz-2025.1.0.20250318.tar.gz", hash = "sha256:97e0e35184c6fe14e3a5014512057f2c57bb0c6582d63c1cfcc4809f82180449"},
 ]
 
 [[package]]
