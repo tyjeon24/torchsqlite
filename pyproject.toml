@@ -36,6 +36,10 @@ extend-select = [
   "D",
   "PD",
 ]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
 [tool.pdm]
 distribution = true
 
