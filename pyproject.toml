@@ -15,13 +15,11 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 
-[tool.pdm]
-distribution = true
-
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",
     "ruff>=0.11.2",
+    "pre-commit>=4.2.0",
 ]
 
 [tool.ruff]
@@ -36,3 +34,6 @@ extend-select = [
   "D",
   "PD",
 ]
+[tool.pdm]
+distribution = true
+
