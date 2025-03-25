@@ -1,1 +1,1 @@
-from src.torchsqlite.dataset import SqliteDataset  # noqa: F401
+from src.torchsqlite.dataset import SqliteDataset, RollingSqliteDataset  # noqa: F401

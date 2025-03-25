@@ -3,6 +3,7 @@ import sqlite3
 import pandas as pd
 from torch.utils.data import IterableDataset
 import numpy as np
+import torch
 
 
 class SqliteDataset(IterableDataset):
@@ -41,3 +42,24 @@ class SqliteDataset(IterableDataset):
         count = cursor.fetchone()[0]
         cursor.close()
         return count
+
+
+class RollingSqliteDataset(SqliteDataset):
+    def __init__(self, filename: str, table_name: str, query: str, window: int, chunk_size: int = 10000) -> None:
+        super().__init__(filename=filename, table_name=table_name, query=query, chunk_size=chunk_size)
+        self.window = window
+
+    def __iter__(self):
+        cursor = self.conn.cursor()
+        cursor.execute(self.query)
+
+        while True:
+            if not (chunk := cursor.fetchmany(self.chunk_size)):
+                cursor.close()
+                break
+            chunk = torch.tensor(chunk)
+            rolled_tensor = chunk.unfold(0, self.window, 1)
+            # Basically trasformer layer(like nn.Transformer) takes tensors with shape of (batch_size, window, features).
+            # So chunk is transposed to have shape of (window, features).
+            transposed_chunk = rolled_tensor.transpose(1, 2)
+            yield from transposed_chunk
