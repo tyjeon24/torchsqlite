@@ -23,3 +23,16 @@ dev = [
     "pytest>=8.3.5",
     "ruff>=0.11.2",
 ]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+extend-select = [
+  "RUF", 
+  "I",
+  "W",   
+  "UP",
+  "D",
+  "PD",
+]
