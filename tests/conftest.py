@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from src.torchsqlite.dataset import RollingSqliteDataset, SqliteDataset
+from torchsqlite.dataset import RollingSqliteDataset, SqliteDataset
 
 
 @pytest.fixture(scope="session")
@@ -42,7 +42,7 @@ def sample_dataset(sample_dataframe: pd.DataFrame) -> Generator[SqliteDataset]:
     """
     filename = "sample_dataset.db"
     table_name = "data"
-    query = f"SELECT * FROM {table_name}"
+    query = f"SELECT data1,data2 FROM {table_name}"
     dataset = SqliteDataset(filename=filename, table_name=table_name, query=query)
     dataset.insert(sample_dataframe)
     yield dataset

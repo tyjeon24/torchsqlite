@@ -3,7 +3,7 @@
 import pandas as pd
 import torch
 
-from src.torchsqlite.dataset import RollingSqliteDataset, SqliteDataset
+from torchsqlite.dataset import RollingSqliteDataset, SqliteDataset
 
 
 def test_dataset_len(sample_dataset: SqliteDataset, sample_dataframe: pd.DataFrame) -> None:
