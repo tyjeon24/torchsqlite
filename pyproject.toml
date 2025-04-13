@@ -1,6 +1,6 @@
 [project]
 name = "torchsqlite"
-version = "0.1.0"
+version = "0.1.1"
 description = "Sqlite based dataset for torch."
 authors = [
     {name = "Taeyong Jeon", email = "taeyongjeon24@gmail.com"},
